@@ -1,0 +1,25 @@
+package quatroJava;
+
+import java.util.Scanner;
+
+public class QuatroJava {
+
+	public static void main(String[] args) {
+		
+		double[] numero = new double[5];
+		
+		Scanner sc = new Scanner(System.in);
+		
+		//Inserir os números
+		for (int i = 0; i < numero.length; i++) {
+			System.out.print("Digite o "+(i+1)+"° número: ");
+			numero[i] = sc.nextDouble();
+		}
+		
+		//Mostrar o número na posição 3
+		System.out.println("\nO número na posição 3 do vetor é: "+numero[3-1]);
+		
+		sc.close();
+	}
+
+}

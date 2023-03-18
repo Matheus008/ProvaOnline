@@ -1,0 +1,43 @@
+package doisJava;
+
+import java.util.Scanner;
+
+public class DoisJava {
+
+	public static void main(String[] args) {
+
+		double[] numero = new double[5];
+		double maiorNumero, menorNumero;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		//Pegar os 5 números
+		for (int i = 0; i < numero.length; i++) {
+			System.out.print("Digite o "+(i+1)+"º número: ");
+			numero[i] = sc.nextDouble();
+			
+		}
+		
+		//Inserindo valor de comparação
+		maiorNumero = numero[1];
+		menorNumero = numero[1];
+		
+		//Verificar qual é o número maior e o menor
+		for (int i = 0; i < numero.length; i++) {
+			
+			if(maiorNumero < numero[i]) {
+				maiorNumero = numero[i];
+			}else if(menorNumero > numero[i]) {
+				menorNumero = numero[i];
+			}
+			
+		}
+		
+		//Imprimir o maior e o menor número
+		System.out.println("O maior número é: "+maiorNumero);
+		System.out.println("O menor número é: "+menorNumero);
+		
+		sc.close();
+	}
+
+}

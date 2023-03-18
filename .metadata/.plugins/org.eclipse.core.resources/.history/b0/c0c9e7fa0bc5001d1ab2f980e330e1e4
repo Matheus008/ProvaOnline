@@ -1,0 +1,27 @@
+package tresJava;
+
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+
+		boolean validacao = true;
+		char resp;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		do {
+
+			
+			
+		} while (validacao != false);
+
+		
+		sc.close();
+		
+	}
+
+}

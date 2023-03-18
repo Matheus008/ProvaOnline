@@ -1,0 +1,61 @@
+package tresJava;
+
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class TresJava {
+
+	public static void main(String[] args) {
+		
+		int quantidadeDeAlunos = 1;
+		int i = 0;
+		String[] nomeAluno = new String[quantidadeDeAlunos];
+		double[][] notas = new double[4][quantidadeDeAlunos];
+		double[] media = new double[quantidadeDeAlunos];
+		boolean validacao = true;
+		char resp;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		do {
+			
+			for ( ; i < nomeAluno.length; i++) {
+				System.out.print("Digite o nome do Aluno: ");
+				nomeAluno[i] = sc.nextLine();
+				System.out.println();
+				
+				for (int j = 0; j < notas.length; j++) {
+					System.out.print("Digite a "+(j+1)+"° nota: ");
+					notas[j][i] = sc.nextDouble();
+					media[i] += notas[j][i];
+				}
+				
+				media[i] = media[i]/4;
+			}			
+			
+			System.out.println("\n\n");
+			
+			do {
+				System.out.print("Deseja continuar? (s/n)");
+				resp = Character.toUpperCase(sc.next().charAt(0));
+				
+				if(resp == 'S') {
+					quantidadeDeAlunos++;
+					i++;
+				}else if(resp == 'N') {
+					validacao = false;
+				}else {
+					System.out.println("Letra digitada inválida");
+				}
+				
+			} while (resp != 'S');
+
+		} while (validacao != false);
+		
+		System.out.println("\n\n\n\n"+quantidadeDeAlunos);
+		
+		sc.close();
+		
+	}
+
+}

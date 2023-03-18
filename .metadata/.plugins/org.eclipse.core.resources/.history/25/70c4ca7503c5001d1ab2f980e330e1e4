@@ -1,0 +1,18 @@
+package tresJava;
+
+public class TresJava {
+
+	public static void main(String[] args) {
+		
+		int quantidadeDeAlunos = 1;
+		String[] nomeAluno = new String[quantidadeDeAlunos];
+		double[][] notas = new double[4][quantidadeDeAlunos];
+		double[] media = new double[quantidadeDeAlunos];
+		boolean resp = true;
+		
+		do {
+			System.out.println("ola");
+		} while (resp != false);
+	}
+
+}

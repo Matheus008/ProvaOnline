@@ -1,0 +1,74 @@
+package application;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+
+import entitie.Aluno;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		String nome,situacao;
+		double media = 0;
+		double[] notas = new double[4];
+		int quantidadeDeAlunos = 1,i = 0;
+		boolean validacao = true;
+		char resp = 0;
+		
+		List<Aluno> list = new ArrayList<>();
+		
+		Scanner sc = new Scanner(System.in);
+		
+		do {
+			
+			for (; i < quantidadeDeAlunos; i++) {
+				
+				System.out.print("Nome do aluno: ");
+				nome = sc.nextLine();
+				
+				for (int j = 0; j < notas.length; j++) {
+					System.out.print("Digite a "+(j+1)+"° nota: ");
+					notas[i] = sc.nextDouble();
+					
+					Aluno aluno = new Aluno(notas);
+					list.add(aluno);
+					media += notas[i];
+				}
+				media = media/4;
+				
+				if(media < 6) {
+					situacao = "Reprovado";
+				}else {
+					situacao = "Aprovado";
+				}
+				Aluno aluno = new Aluno(nome, media, situacao);
+				list.add(aluno);
+			}
+			
+			do {
+				System.out.println("\n");
+				System.out.print("Deseja continuar? (S/N)");
+				resp = Character.toUpperCase(sc.next().charAt(0));
+				
+				if(resp == 'S') {
+					quantidadeDeAlunos++;
+				}else if(resp == 'N') {
+					validacao = false;
+				}else {
+					System.out.println("\n\n");
+					System.out.println("Letra digitada está incorreta!!");
+				}
+				
+			} while (resp != 'S');
+			
+		} while (validacao != false);
+
+		
+		sc.close();
+		
+	}
+
+}

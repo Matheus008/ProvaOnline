@@ -1,0 +1,17 @@
+package doisJava;
+
+public class DoisJava {
+
+	public static void main(String[] args) {
+
+		double[] numero = new double[5];
+		double maiorNumero, menorNumero;
+		
+		for (int i = 0; i < numero.length; i++) {
+			
+		}
+		
+		
+	}
+
+}

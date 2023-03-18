@@ -1,0 +1,54 @@
+package cincoJava;
+
+import java.util.Scanner;
+
+public class CincoJava {
+
+	public static void main(String[] args) {
+		
+		String[] nomes = new String[3];
+		double[][] notas = new double[3][4];
+		double[] media = new double[3];
+		double maiorMedia = 0, menorMedia = 0;
+		int posicaoMaiorMedia = 0, posicaoMenorMedia = 0;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		for (int i = 0; i < 3; i++) {
+			
+			System.out.print("Digite o nome do "+(i+1)+"° aluno: ");
+			nomes[i] = sc.next();
+			
+			System.out.println();
+			
+			for (int j = 0; j < 4; j++) {
+				
+				System.out.print("Digite a "+(j+1)+"° nota: ");
+				notas[i][j] = sc.nextDouble();
+				
+				media[i] += notas[i][j];
+			}
+			media[i] /=5;
+			
+			System.out.println();
+		}
+		
+		for (int i = 0; i < media.length; i++) {
+			System.out.println("Nome: "+nomes[i]+" - média: "+media[i]);
+			
+			if(maiorMedia < media[i]) {
+				maiorMedia = media[i];
+				posicaoMaiorMedia = i;
+			}
+			if(menorMedia > media[i]) {
+				menorMedia = media[i];
+				posicaoMenorMedia = i;
+			}
+		}
+		
+		System.out.println("O aluno que obteve a maior média foi: "+nomes[posicaoMaiorMedia]);
+		System.out.println("O aluno que obteve a menor média foi: "+nomes[posicaoMenorMedia]);
+		sc.close();
+	}
+
+}

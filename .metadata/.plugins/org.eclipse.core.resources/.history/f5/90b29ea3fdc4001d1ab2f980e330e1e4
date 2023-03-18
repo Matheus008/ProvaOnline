@@ -1,0 +1,45 @@
+package umJava;
+
+import java.util.Scanner;
+
+public class UmJava {
+
+	public static void main(String[] args) {
+		
+		int[] numero = new int[5];
+		int media = 0;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		for (int i = 0; i < numero.length; i++) {
+			System.out.print("Digite o "+(i+1)+"º número: ");
+			numero[i] = sc.nextInt();
+			media += numero[i];
+		}
+		
+		media = media / 5;
+		
+		System.out.println("Números Pares: ");
+		for (int i = 0; i < numero.length; i++) {
+			
+			if(numero[i] %2 == 0) {
+				System.out.print("|" + numero[i] + "| ");
+			}
+			
+		}
+		
+		System.out.println("\nNúmeros Ímpares: ");
+		for (int i = 0; i < numero.length; i++) {
+			
+			if(numero[i] %2 != 0) {
+				System.out.print("|" + numero[i] + "| ");
+			}
+			
+		}
+		
+		System.out.println("\nA média dos 5 números digitados são: "+media);
+		
+		sc.close();
+	}
+
+}

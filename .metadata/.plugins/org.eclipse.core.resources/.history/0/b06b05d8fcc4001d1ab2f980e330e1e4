@@ -1,0 +1,23 @@
+package umJava;
+
+import java.util.Scanner;
+
+public class UmJava {
+
+	public static void main(String[] args) {
+		
+		int[] numero = new int[5];
+		Scanner sc = new Scanner(System.in);
+		
+		for (int i = 0; i < numero.length; i++) {
+			System.out.print("Digite o "+(i+1)+"º número: ");
+			numero[i] = sc.nextInt();
+		}
+		
+		
+		
+		
+		sc.close();
+	}
+
+}

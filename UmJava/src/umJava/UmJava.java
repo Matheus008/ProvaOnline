@@ -1,0 +1,50 @@
+package umJava;
+
+import java.util.Scanner;
+
+public class UmJava {
+
+	public static void main(String[] args) {
+		
+		double[] numero = new double[5];
+		double media = 0;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		//Pegar os 5 números e ja somar para depois obter a média
+		for (int i = 0; i < numero.length; i++) {
+			System.out.print("Digite o "+(i+1)+"º número: ");
+			numero[i] = sc.nextDouble();
+			media += numero[i];
+		}
+		
+		//obter a média
+		media = media / 5;
+		
+		//Imprimir os números pare
+		System.out.println("Números Pares: ");
+		for (int i = 0; i < numero.length; i++) {
+			
+			if(numero[i] %2 == 0) {
+				System.out.print("|" + numero[i] + "| ");
+			}
+			
+		}
+		
+		//Imprimir os números ímpares
+		System.out.println("\nNúmeros Ímpares: ");
+		for (int i = 0; i < numero.length; i++) {
+			
+			if(numero[i] %2 != 0) {
+				System.out.print("|" + numero[i] + "| ");
+			}
+			
+		}
+		
+		//Imprimir a média 
+		System.out.println("\n\nA média dos 5 números digitados são: "+media);
+		
+		sc.close();
+	}
+
+}
